@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: linear-gradient(to bottom, #051937, #002946, #003745, #004332, #084c14);
+}
 
 .container {
     max-width: 1024px;
@@ -28,10 +31,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(211, 211, 211, 0.2);
+    cursor: pointer;
 }
 
 .box-images {
     width: 90%;
+    position: relative;
+}
+
+.img-slide {
+    height: 100%;
 }
 
 .box-images img {
@@ -43,4 +53,15 @@
 
 .box-images img.visible {
     display: block;
+}
+
+.photo-selectors {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+i.visible {
+    color: white;
 }
