@@ -1,0 +1,46 @@
+* {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    max-width: 1024px;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.slider {
+    width: 100%;
+    height: 400px;
+}
+
+.prev, .box-images, .next {
+    float: left;
+    height: 100%;
+}
+
+.prev, .next {
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-images {
+    width: 90%;
+}
+
+.box-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.box-images img.visible {
+    display: block;
+}
