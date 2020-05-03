@@ -8,6 +8,14 @@ body {
     background-image: linear-gradient(to bottom, #051937, #002946, #003745, #004332, #084c14);
 }
 
+.title {
+    font-size: 20px;
+    color: white;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 .container {
     max-width: 1024px;
     height: 100vh;
@@ -19,6 +27,7 @@ body {
 .slider {
     width: 100%;
     height: 400px;
+    margin-bottom: 100px;
 }
 
 .prev, .box-images, .next {
@@ -59,9 +68,14 @@ body {
     position: absolute;
     bottom: 2%;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
 }
 
-i.visible {
+.photo-selectors i {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.photo-selectors i.visible {
     color: white;
 }
