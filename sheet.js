@@ -21,7 +21,6 @@ $('.next').click(function() {
     //Reimposto la classe visible all'ultimo selettore
     $('i:first-child').addClass('visible');
     }
-
 })
 
 //Intercetto il click sul tasto next
@@ -47,6 +46,46 @@ $('.prev').click(function() {
     }
 
 })
+
+//Imposto tasto play per far riparttire lo slideshow automatico
+$('.play').click(function(){
+    setInterval(slide_timer, 3000);
+})
+
+//Imposto il tasto stop per bloccare lo slideshow
+$('.stop').click(function(){
+        clearInterval(timer);
+})
+
+//Array crato per contenre le immagini
+var img_array = ['img/lake2.jpg', 'img/beach.jpg', 'img/clouds.jpg', 'img/desert.jpg'];
+ console.log(img_array);
+//Impostare variabile setInterval
+var timer = setInterval(slide_timer, 3000);
+//Creare funzione per far partire lo slideshow automaticamente
+var countdown = 0;
+function slide_timer(){
+    //Recupero l'immagine e il rispettivo selettore con la classe visible
+    var img_attuale = $('img.visible');
+    var selettore_foto = $('i.visible');
+    //Rimuovo la classe visible dall'immagine e dal selettore  corrente
+    img_attuale.removeClass('visible');
+    selettore_foto.removeClass('visible');
+    //Recupero l'immagine e il selettore con il comando jquery next che mi permette di prendere il fratello immediatamente successivo dell'img e del selettore corrente
+    var img_successiva = img_attuale.next('img');
+    var selettore_successivo = selettore_foto.next('i');
+    //Verifico se c'è un'immagine un selettore successivo e vado ad aggingere la classe visible
+    if (img_successiva.length != 0) {
+    img_successiva.addClass('visible');
+    selettore_successivo.addClass('visible');
+    } else {
+    //Reimposto la classe visible alla prima immagine
+    $('img:first-child').addClass('visible');
+    //Reimposto la classe visible all'ultimo selettore
+    $('i:first-child').addClass('visible');
+    }
+};
+
 
 
 //Bonus: cliccare un pallino e attivare la foto corrispondente, senza seguire l'ordine sequenziale.
