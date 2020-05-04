@@ -47,21 +47,29 @@ $('.prev').click(function() {
 
 })
 
+//Impostare variabile setInterval
+var timer = setInterval(slide_timer, 3000);
+
+//Imposto i pulsanti in modo tale che sia visibile soltatnto il pulsante utile al momento
+
 //Imposto tasto play per far riparttire lo slideshow automatico
 $('.play').click(function(){
-    setInterval(slide_timer, 3000);
+    $('.play').removeClass('visible');
+    $('.stop').addClass('visible');
+    timer = setInterval(slide_timer, 3000);
 })
 
 //Imposto il tasto stop per bloccare lo slideshow
 $('.stop').click(function(){
-        clearInterval(timer);
+    $('.stop').removeClass('visible');
+    $('.play').addClass('visible');
+    clearInterval(timer);
 })
 
 //Array crato per contenre le immagini
 var img_array = ['img/lake2.jpg', 'img/beach.jpg', 'img/clouds.jpg', 'img/desert.jpg'];
  console.log(img_array);
-//Impostare variabile setInterval
-var timer = setInterval(slide_timer, 3000);
+
 //Creare funzione per far partire lo slideshow automaticamente
 var countdown = 0;
 function slide_timer(){
